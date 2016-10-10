@@ -1,0 +1,6 @@
+.contents.row
+  = form_tag '/articles', method: :post do
+    %h3 投稿する
+    = text_field_tag :image, '', placeholder: 'Image Url'
+    = text_area_tag :text, '', placeholder: 'Text', size: '30x10'
+    = submit_tag 'SENT'

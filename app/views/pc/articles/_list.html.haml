@@ -1,15 +1,15 @@
 .content_post{:style => "background-image: url(#{article.image});"}
-  -# - if user_signed_in? && current_user.id == obj.user.id
+  - if user_signed_in? && current_user.id == article.user.id
     .more
       %span= image_tag 'arrow_top.png'
       %ul.more_list
         %li
-          = link_to '編集', "/obtrs/#{obj.id}/edit", method: :get
+          = link_to '編集', "/articles/#{article.id}/edit", method: :get
         %li
-          = link_to '削除', "/obtrs/#{obj.id}", method: :delete
+          = link_to '削除', "/articles/#{article.id}", method: :delete
   %p
     = br(article.text)
   %span.name
     %a{:href => ""}
-      %span 出品者
-      -# # = obj.user.nickname
+      %span 投稿者
+      = article.user.nickname

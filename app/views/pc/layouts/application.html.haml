@@ -24,16 +24,16 @@
     %header.header
       .header__bar.row
         %h1.grid-6
-          %a{:href => "/articles"} indA
-        -# - if user_signed_in?
+          = link_to 'indA', "/"
+        - if user_signed_in?
           .user_nav.grid-6
             %span
-              = current_user.nickname
+              = "#{current_user.nickname}さん"
               %ul.user__info
                 %li
-                  %a{:href => "/users/#{current_user.id}"} マイページ
+                  = link_to 'マイページ', "/users/#{current_user.id}"
                   = link_to "ログアウト", destroy_user_session_path, method: :delete
-            %a.post{:href => "/articles/new"} 出品する
+            = link_to '投稿する', "/articles/new", class: "post"
         - else
           .grid-6
             = link_to "ログイン", new_user_session_path, class: 'post'

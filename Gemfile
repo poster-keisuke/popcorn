@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-turbolinks'
 
-gem 'kaminari', github: 'amatsuda/kaminari' # ページネーション
+gem 'kaminari'                    # ページネーション
 gem 'draper'                      # プレゼンテーション層として利用する
 gem 'jbuilder', '~> 2.0'
 gem 'oj'                          # Json表示の最適化
@@ -125,7 +125,6 @@ end
 gem 'sprockets', '2.11.0'
 gem 'pry-rails'
 gem 'compass-rails','~> 2.0'
-# gem 'kaminari'
 gem 'paperclip'
 
 group :production, :staging do
