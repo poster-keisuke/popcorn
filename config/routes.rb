@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/' => 'articles#index'
   get 'users/:id' => 'users#show'
 
+  get 'login' => 'login#show'
+
   resources :articles do
   end
 end
