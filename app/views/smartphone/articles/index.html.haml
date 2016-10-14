@@ -1,1 +1,3 @@
-%p hello World!!
+.contents.row
+  = render partial: "list", :collection => @articles, :as => "article"
+  = paginate @articles
