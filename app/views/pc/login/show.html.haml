@@ -1,0 +1,13 @@
+.contents.row
+  .sessions-login
+    .login__title.center
+      %p アカウントをお持ちの方はこちらから
+    .login__button.btn
+      = link_to 'Log in', new_user_session_path
+  .sessions-sign-up
+    .sign-up__title.center
+      %p 初めての方はこちらから
+    .sign-up__button.btn
+      = link_to 'Sign up', new_user_registration_path
+    .sign-up__non-login.center
+      = link_to 'ログインなしで始める。', '/'
