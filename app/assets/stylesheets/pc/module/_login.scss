@@ -2,10 +2,24 @@
 
 	&__button {
 		text-align: center;
+		display: block;
+ 		margin-left: auto;
+ 		margin-right: auto;
 	}
 
     &__non-login{
 	    text-align: center;
-    }
+	}
+
+}
+
+.sign-up{
+
+	&__button{
+		text-align: center;
+		display: block;
+ 		margin-left: auto;
+ 		margin-right: auto;
+	}
 
 }
