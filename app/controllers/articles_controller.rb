@@ -8,10 +8,12 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
+		@article = Article.new
 	end
 
 	def create
-		Article.create(image: article_params[:image], text: article_params[:text], user_id: current_user.id)
+		@article =  Article.new(article_params.merge({ user_id: current_user.id }))
+		@article.save!
 	end
 
 	def destroy
@@ -34,7 +36,7 @@ class ArticlesController < ApplicationController
 
 	private
 	def article_params
-		params.permit(:image, :text)
+		params.require(:article).permit(:image, :title, :text)
 	end
 
 	def move_to_index
