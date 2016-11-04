@@ -1,0 +1,11 @@
+.contents.row
+  .article__contents.u-mt.u-pb
+    .contents__image
+      = image_tag @article.image, class: "event__image"
+    .contents__user-name.u-mt-small
+      = "投稿者: #{@article.user.nickname}"
+    .contents__detail
+      .contents__title #{@article.title}
+      .contents__text #{@article.text}
+    .contents__suport.u-mt
+      .suport__button 支援表明をする
