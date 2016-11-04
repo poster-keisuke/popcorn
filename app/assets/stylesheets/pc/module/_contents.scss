@@ -1,0 +1,59 @@
+.contents__user-name {
+    text-align: center;
+}
+.contents__more {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+
+.contents__more a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+
+.contents__more a:hover {
+  color: #0090aa;
+}
+
+
+.suport__button{
+  background: #FA7921;
+  color:#fee;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 20px;
+}
+.suport__button:hover{
+  background:#fff;
+  color: #FA7921;
+}
+.suport__button:before,.suport__button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #FA7921;
+  transition:400ms ease all;
+}
+.suport__button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.suport__button:hover:before,.suport__button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}

@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
 		@article = Article.new
 	end
 
+	def show
+		@article = Article.find_by(id: params[:id])
+	end
+
 	def create
 		@article =  Article.new(article_params.merge({ user_id: current_user.id }))
 		@article.save!
