@@ -1,6 +1,12 @@
 .contents.row
-  = form_tag "/articles/#{@article.id}", method: :patch do
-    %h3 編集する
-    = text_field_tag :image, '', placeholder: 'Image Url', value: @article.image, autofocus: 'true'
-    = text_area_tag :text, "#{@article.text}", placeholder: 'Text', size: '30x10'
-    = submit_tag 'SENT'
+  = form_for @article, url: "/articles/#{@article.id}" do |f|
+    %h3 イベント情報を編集する
+    %h6 (選択しない場合は元のデータが利用されます。)
+    = f.label :image
+    = f.file_field :image
+    = f.hidden_field :image_cache
+    = f.label :title
+    = f.text_field :title, value: "#{@article.title}"
+    = f.label :text
+    = f.text_area :text, value: "#{@article.text}", size: '30x10'
+    = f.submit '再投稿する'
