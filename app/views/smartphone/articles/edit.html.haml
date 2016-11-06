@@ -1,0 +1,12 @@
+.contents.row
+  = form_for @article, url: "/articles/#{@article.id}" do |f|
+    %h3 イベント情報を編集する
+    %h6 (選択しない場合は元のデータが利用されます。)
+    = f.label :image
+    = f.file_field :image
+    = f.hidden_field :image_cache
+    = f.label :title
+    = f.text_field :title, value: "#{@article.title}"
+    = f.label :text
+    = f.text_area :text, value: "#{@article.text}", size: '30x10'
+    = f.submit '再投稿する'
