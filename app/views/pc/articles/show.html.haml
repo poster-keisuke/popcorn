@@ -6,6 +6,6 @@
       = "投稿者: #{@article.user.nickname}"
     .contents__detail
       .contents__title #{@article.title}
-      .contents__text #{@article.text}
+      .contents__text= h(simple_format @article.text).html_safe
     .contents__suport.u-mt
       .suport__button 支援表明をする
