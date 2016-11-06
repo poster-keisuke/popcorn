@@ -1,3 +1,33 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.article__contents {
+    width: 650px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+.event__image {
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px 5px 0 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.contents__detail {
+	padding: 20px;
+}
+
+.contents__title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.contents__text {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    word-wrap: break-word;
+}
