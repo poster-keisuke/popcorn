@@ -17,6 +17,34 @@
   color: #0090aa;
 }
 
+.contents__action {
+    display: flex;
+    justify-content: center;
+}
+
+.contents__icon {
+    padding-right: 20px;
+}
+
+.fa-heart {
+    color: #FFCBDD;
+}
+.fa-twitter {
+    color: #57C3E9;
+}
+
+.fa-facebook-official {
+    color: #3b5998;
+}
+
+
+
+
+.contents__suport {
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+
 
 .suport__button{
   background: #ffc107;
