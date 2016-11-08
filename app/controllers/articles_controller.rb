@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
 	before_action :move_to_index, except: :index
 
 	def index
-		# @articles  = Articles.includes(:user).order("id DESC").page(params[:page]).per(6)
 		@articles = Article.all.page(params[:page]).per(5).order("created_at DESC")
 	end
 
@@ -13,6 +12,7 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = Article.find_by(id: params[:id])
+		@favorite = @article.favorites
 	end
 
 	def create
