@@ -1,0 +1,17 @@
+.contents.row
+  -# .favorite__action.u-mt
+  -#   = favorite_user(favorite)
+  %ul.timeline
+    %li
+      .timeline-badge.warning.fa.fa-heart
+        %i.glyphicon.glyphicon-check
+      .timeline__panel
+        .timeline-heading
+          %h4.timeline__title お気に入り
+          %p
+            %small.text-muted
+              %i.glyphicon.glyphicon-time
+                = favorite_user_time(favorite)
+        .timeline-body
+          %p
+            = favorite_user(favorite)

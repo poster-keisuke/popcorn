@@ -1,15 +1,53 @@
-.content_post{:style => "background-image: url(#{article.image});"}
-  - if user_signed_in? && current_user.id == article.user.id
-    .more
-      %span= image_tag 'arrow_top.png'
-      %ul.more_list
-        %li
-          = link_to '編集', "/articles/#{article.id}/edit", method: :get
-        %li
-          = link_to '削除', "/articles/#{article.id}", method: :delete
-  %p
-    = br(article.text)
-  %span.name
-    %a{:href => ""}
-      %span 投稿者
-      = article.user.nickname
+%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+
+.contents.row
+  .article__contents.u-mt-large
+    - if user_signed_in? && current_user.id == article.user.id
+      -# = render partial: "menu", locals: { article: article }
+      .more
+        %ul.more__list
+          %li
+            = link_to '', "/articles/#{article.id}/edit", method: :get, class: "fa fa-pencil", id: "i"
+          %li
+            = link_to '', "/articles/#{article.id}", method: :delete, class: "fa fa-trash", id: "i"
+    .contents__image
+      = image_tag article.image, class: "event__image"
+    .contents__detail
+      - if article.user.advertiser?
+        = image_tag 'sale.png', class: "advertiser-mark"
+        .contents__title #{article.title}
+      - else
+        .contents__title #{article.title}
+      .contents__user-name
+        = "投稿者: #{article.user.nickname}"
+    .contents__infomaiton
+      .contents__more
+        = link_to "もっと詳しく見る", "/articles/#{article.id}"
+
+
+
+
+
+
+
+
+
+
+
+  -# .content_post{:style => "background-image: url(#{article.image});"}
+  -#   - if user_signed_in? && current_user.id == article.user.id
+  -#     .more
+  -#       %span= image_tag 'arrow_top.png'
+  -#       %ul.more_list
+  -#         %li
+  -#           = link_to '編集', "/articles/#{article.id}/edit", method: :get
+  -#         %li
+  -#           = link_to '削除', "/articles/#{article.id}", method: :delete
+  -#   %p
+  -#     = br(article.title)
+  -#   %span.name
+  -#     %a{:href => ""}
+  -#       %span 投稿者
+  -#       = article.user.nickname
+  -#   .contents__more
+  -#     = link_to "詳しくみる", "/articles/#{article.id}"

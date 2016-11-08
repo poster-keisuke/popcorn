@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'login' => 'login#show'
 
   resources :articles do
+  	get "favorites/toggle"
   end
 end

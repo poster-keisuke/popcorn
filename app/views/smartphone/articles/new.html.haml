@@ -1,0 +1,12 @@
+.contents.row
+  = form_for @article, url: articles_path, html: { multipart: true } do |f|
+    %h2 出品する
+    = f.label :image
+    = f.file_field :image
+    = f.hidden_field :image_cache
+    = f.label :title
+    = f.text_field :title, placeholder: 'イベントのタイトル'
+    = f.label :text
+    = f.text_area :text, placeholder: "イベントの詳細\n例）開催予定2016/11/11 最低参加人数17人", size: "30x20"
+    = f.submit '投稿する'
+

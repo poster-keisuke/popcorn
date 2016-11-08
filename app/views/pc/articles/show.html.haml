@@ -1,3 +1,4 @@
+-# = render partial: "favorite", :collection => @favorite, :as => "favorite"
 .contents.row
   .article__contents.u-mt.u-pb
     .contents__image
@@ -5,7 +6,23 @@
     .contents__user-name.u-mt-small
       = "投稿者: #{@article.user.nickname}"
     .contents__detail
+      - if @article.user.advertiser?
+        = image_tag 'sale.png', class: "advertiser-mark"
       .contents__title #{@article.title}
-      .contents__text #{@article.text}
+      .contents__text= h(simple_format @article.text).html_safe
+    .contents__action
+      .contents__icon
+        = link_to article_favorites_toggle_path(@article) , id: 'bookmark-link', remote: true do
+          = raw favorite_icon(@article, current_user)
+      .contents__icon
+        = link_to '' , "https://twitter.com/sxd_2016", class: "fa fa-twitter fa-2x"
+      .contents__icon
+        = link_to '' , "https://www.facebook.com/sud.kamibayasi/?fref=ts", class: "fa fa-facebook-official fa-2x"
     .contents__suport.u-mt
-      .suport__button 支援表明をする
+      .suport__button 応援する
+= render partial: "favorite", :collection => @favorite, :as => "favorite"
+-# .contents.row
+-#   .favorite__action
+    -# - @user.each do |user|
+    -#   #{user.nickname}
+    -# end

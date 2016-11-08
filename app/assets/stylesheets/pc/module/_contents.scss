@@ -17,25 +17,53 @@
   color: #0090aa;
 }
 
+.contents__action {
+    display: flex;
+    justify-content: center;
+}
+
+.contents__icon {
+    padding-right: 20px;
+}
+
+.fa-heart {
+    color: #FFCBDD;
+}
+.fa-twitter {
+    color: #57C3E9;
+}
+
+.fa-facebook-official {
+    color: #3b5998;
+}
+
+
+
+
+.contents__suport {
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+
 
 .suport__button{
-  background: #FA7921;
-  color:#fee;
+  background: #ffc107;
+  color:#fff;
   border:none;
   position:relative;
-  height:60px;
-  font-size:1.6em;
+  height:50px;
+  font-size:1.5em;
   padding:0 2em;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
   text-align: center;
-  padding: 10px 0;
+  padding: 7px 0;
   margin: 0 20px;
 }
 .suport__button:hover{
   background:#fff;
-  color: #FA7921;
+  color: #ffc107;
 }
 .suport__button:before,.suport__button:after{
   content:'';
@@ -44,7 +72,7 @@
   right:0;
   height:2px;
   width:0;
-  background: #FA7921;
+  background: #ffc107;
   transition:400ms ease all;
 }
 .suport__button:after{
