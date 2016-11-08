@@ -1,4 +1,5 @@
 module FavoritesHelper
+
   def favorite_icon(article, user)
 	if user.favorites.exists?(article: article)
 	  '<i class="fa fa-heart fa-2x"></i>'
@@ -13,6 +14,7 @@ module FavoritesHelper
   		return user.nickname
   	end
   end
+
   def favorite_user_time(favorite)
     @user = User.where(id: favorite.user_id)
     @user.each do |user|
