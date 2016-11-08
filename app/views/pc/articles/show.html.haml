@@ -1,5 +1,4 @@
-%link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet"}/
-
+-# = render partial: "favorite", :collection => @favorite, :as => "favorite"
 .contents.row
   .article__contents.u-mt.u-pb
     .contents__image
@@ -21,3 +20,9 @@
         = link_to '' , "https://www.facebook.com/sud.kamibayasi/?fref=ts", class: "fa fa-facebook-official fa-2x"
     .contents__suport.u-mt
       .suport__button 応援する
+= render partial: "favorite", :collection => @favorite, :as => "favorite"
+-# .contents.row
+-#   .favorite__action
+    -# - @user.each do |user|
+    -#   #{user.nickname}
+    -# end
