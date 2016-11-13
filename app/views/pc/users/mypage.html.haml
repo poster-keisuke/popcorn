@@ -1,0 +1,5 @@
+.contents.row
+  %h1.user__name.u-mt #{@nickname}
+  %h3.user__article__number.u-mt.u-mb-large 投稿数: #{@article.count}
+.user__article
+  = render partial: "list", collection: @article, :as => "article"
