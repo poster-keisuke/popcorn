@@ -10,6 +10,7 @@ h3.user__article__number {
 
 .user__article {
     display: flex;
+    flex-wrap: wrap;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -20,6 +21,7 @@ h3.user__article__number {
     border-radius: 3px;
     box-shadow: 0 2px 5px #ccc;
     position: relative;
+    flex: 1 calc(100% / 4);
 }
 
 .post__detail {
