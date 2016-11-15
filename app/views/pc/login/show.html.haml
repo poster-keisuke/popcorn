@@ -1,13 +1,29 @@
+:css
+  body {
+    padding-top: 0px;
+  }
+
+= content_for :hide_header,true
+%link{:href => "https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister", :rel => "stylesheet"}/
+
+.login__background
+  = image_tag 'background.jpg', class: "background__image"
+.login__title Popcorn
+.login__subtitle もっと気軽にイベントを開こう！
+
 .contents.row
+  .login__detail.u-mt-large
+    .detail__title.u-mb Popcornとは
+    .detail__text.u-mb-large「Popcorn」は簡単にイベントを開催できることを目指しています。イベントはワンステップで投稿できます。またイベントスポンサーの仕組みがあるのでお金が無くても開催できます。そして、友達がいない人でも簡単に集客ができるので問題ありません。またイベントはコミュニケーションの場なので新たな出会いもあります。
   .sessions-login
-    .login__title.center
-      %p アカウントをお持ちの方はこちらから↓
+    -# .login__title.center
+    -#   %p アカウントをお持ちの方はこちらから↓
     .login__button.btn
-      = link_to 'Log in', new_user_session_path
+      = link_to 'Log in', new_user_session_path, class: "button__link"
   .sessions-sign-up
     .sign-up__title.center
       %p 初めての方はこちらから↓
-    .sign-up__button.btn
-      = link_to 'Sign up', new_user_registration_path
+    .sign-up__button.btn.u-mb-large
+      = link_to 'Sign up', new_user_registration_path, class: "button__link"
     .sign-up__non-login.center
-      = link_to 'ログインなしで始める。', '/'
+      = link_to 'ログインなしで始める。', '/articles'
