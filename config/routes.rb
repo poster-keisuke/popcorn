@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :articles do
   	get "favorites/toggle"
   end
+  get '/:nickname' => 'users#mypage'
 end
