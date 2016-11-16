@@ -6,7 +6,7 @@
           %li
             = link_to '', "/articles/#{article.id}/edit", method: :get, class: "fa fa-pencil", id: "i"
           %li
-            = link_to '', "/articles/#{article.id}", method: :delete, class: "fa fa-trash", id: "i"
+            = link_to '', "/articles/#{article.id}", method: :delete, class: "fa fa-trash", id: "i",  data: {confirm: '本当に削除しますか？'}
     .contents__image
       = image_tag article.image, class: "event__image"
     .contents__detail
@@ -16,7 +16,7 @@
       - else
         .contents__title #{article.title}
       .contents__user-name
-        = "投稿者: #{article.user.nickname}"
+        = link_to "投稿者: #{article.user.nickname}", "#{article.user.nickname}"
     .contents__infomaiton
       .contents__more
         = link_to "もっと詳しく見る", "/articles/#{article.id}"
