@@ -1,8 +1,6 @@
 .article__contents {
+    @extend .card__contents;
     width: 650px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #ccc;
 }
 
 .event__image {

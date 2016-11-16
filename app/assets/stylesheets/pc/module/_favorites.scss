@@ -19,7 +19,7 @@
   position: absolute;
   content: " ";
   width: 3px;
-  background-color: #eeeeee;
+  background-color: $white;
   left: 50%;
   margin-left: -1.5px;
 }
@@ -54,7 +54,7 @@
   float: left;
   border: 1px solid #d4d4d4;
   border-radius: 5px;
-  background-color: #fff;
+  background-color: $white;
   padding: 20px;
   position: relative;
   -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
@@ -79,14 +79,14 @@
   right: -14px;
   display: inline-block;
   border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
+  border-left: 14px solid $white;
+  border-right: 0 solid $white;
   border-bottom: 14px solid transparent;
   content: " ";
 }
 
 .timeline > li > .timeline-badge {
-  color: #fff;
+  color: $white;
   width: 50px;
   height: 50px;
   line-height: 50px;
@@ -124,7 +124,7 @@
 }
 
 .timeline-badge.warning {
-  background-color: #f0ad4e !important;
+  background-color: $heart !important;
 }
 
 .timeline-badge.danger {
@@ -132,7 +132,7 @@
 }
 
 .timeline-badge.info {
-  background-color: #5bc0de !important;
+  background-color: $accent !important;
 }
 
 .timeline__title {
