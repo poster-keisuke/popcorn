@@ -1,6 +1,6 @@
 .contents.row
   .contents__inner
-    .article__contents.u-mt.u-pb
+    .article__contents.u-mt.u-pb-x-small
       .contents__image
         = image_tag @article.image, class: "event__image"
       .contents__user-name.u-mt-small
@@ -22,4 +22,5 @@
         .suport__button 応援する
 
 = render partial: "support"
-= render partial: "favorite", :collection => @favorite, :as => "favorite"
+= render partial: "timeline_favorite", :collection => @favorite, :as => "favorite"
+= render partial: "timeline_support", :collection => @supports, :as => "support"

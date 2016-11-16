@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 		@favorite = @article.favorites
 
 		@support = Support.new
+		@supports = @article.supports
 	end
 
 	def create

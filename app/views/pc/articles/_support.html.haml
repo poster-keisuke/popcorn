@@ -14,5 +14,5 @@
       = f.label :力仕事で支援する
       = f.radio_button :support_method, :power
 
-      = f.submit 'この内容でサポートする'
+      = f.submit 'サポートする', data: {confirm: 'Are you sure?'}
 

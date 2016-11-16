@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 /* ==========================================================================
    Base
    ========================================================================== */
@@ -34,7 +37,7 @@
 @import "module/article/articles";
 @import "module/article/advertiser";
 @import "module/article/contents";
-@import "module/article/favorites";
+@import "module/article/timelines";
 @import "module/article/list";
 @import "module/article/support";
 
