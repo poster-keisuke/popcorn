@@ -1,7 +1,6 @@
 .contents.row
   .article__contents.u-mt-large
     - if user_signed_in? && current_user.id == article.user.id
-      -# = render partial: "menu", locals: { article: article }
       .more
         %ul.more__list
           %li
