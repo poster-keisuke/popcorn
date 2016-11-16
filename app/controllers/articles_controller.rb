@@ -13,6 +13,9 @@ class ArticlesController < ApplicationController
 	def show
 		@article = Article.find_by(id: params[:id])
 		@favorite = @article.favorites
+
+		@support = Support.new
+		@supports = @article.supports
 	end
 
 	def create
@@ -38,6 +41,12 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 	end
 
+	def support
+		article_id = params[:id]
+		user_support = current_user.supports
+		user_support.create(user: current_user, article: Article.find(article_id), support_method: params[:support][:support_method])
+	end
+
 	private
 	def article_params
 		params.require(:article).permit(:image, :title, :text)
@@ -48,4 +57,5 @@ class ArticlesController < ApplicationController
 		  redirect_to action: :index
 		end
 	end
+
 end

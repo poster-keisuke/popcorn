@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :articles do
   	get "favorites/toggle"
   end
+  post "articles/:id" => 'articles#support'
   get '/:nickname' => 'users#mypage'
 end

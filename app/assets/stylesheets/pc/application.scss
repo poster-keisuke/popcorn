@@ -15,6 +15,13 @@
 @import "utility/utility";
 @import "utility/main";
 
+
+/* ==========================================================================
+   component
+   ========================================================================== */
+
+@import "component/card";
+
 /* ==========================================================================
    module
    ========================================================================== */
@@ -23,10 +30,13 @@
 
 
 @import "module/login";
-@import "module/contents";
-@import "module/articles";
-@import "module/advertiser";
-@import "module/favorites";
+
+@import "module/article/articles";
+@import "module/article/advertiser";
+@import "module/article/contents";
+@import "module/article/timelines";
+@import "module/article/list";
+@import "module/article/support";
+
 // @import "module/menu";
-@import "module/list";
 
