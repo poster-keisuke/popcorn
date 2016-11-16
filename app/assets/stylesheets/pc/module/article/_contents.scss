@@ -3,18 +3,18 @@
 }
 .contents__more {
     text-align: center;
-    border-top: 1px solid #eee;
+    border-top: 1px solid $lightGray;
     padding: 20px;
 }
 
 .contents__more a {
   text-decoration: none;
-  color: #0bd;
+  color: $accent;
   margin: 0 10px;
 }
 
 .contents__more a:hover {
-  color: #0090aa;
+  color: $accent_hover;
 }
 
 .contents__action {
@@ -27,7 +27,7 @@
 }
 
 .fa-heart {
-    color: #FFCBDD;
+    color: $heart;
 }
 .fa-twitter {
     color: #57C3E9;
@@ -38,9 +38,7 @@
 }
 
 
-
-
 .contents__suport {
-    border-top: 1px solid #eee;
+    border-top: 1px solid $lightGray;
     padding: 20px;
 }
