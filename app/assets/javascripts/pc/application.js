@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require_tree ../pc
 //= require ./favorite
+//= require ./hidden
