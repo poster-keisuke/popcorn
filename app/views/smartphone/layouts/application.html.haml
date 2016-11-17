@@ -2,9 +2,12 @@
 %html
   %head
     %title indA
-    = stylesheet_link_tag 'pc/application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag "pc/application", "data-turbolinks-track" => true
+    = stylesheet_link_tag 'smartphone/application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "smartphone/application", "data-turbolinks-track" => true
     = csrf_meta_tags
+    %meta{:content => "width=device-width", :name => "viewport"}/
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    = favicon_link_tag('favicon.ico')
 
     :javascript
       WebFontConfig = {
@@ -24,7 +27,7 @@
     %header.header
       .header__bar.row
         %h1.grid-6
-          = link_to 'indA', "/"
+          = link_to 'Popcorn', "/"
         - if user_signed_in?
           .user_nav.grid-6
             %span
@@ -33,7 +36,7 @@
                 %li
                   = link_to 'マイページ', "/users/#{current_user.id}"
                   = link_to "ログアウト", destroy_user_session_path, method: :delete
-            = link_to '投稿する', "/articles/new", class: "post"
+            = link_to '投稿する', "/articles/new", class: 'post__button header__post'
         - else
           .grid-6
             = link_to "ログイン", new_user_session_path, class: 'post'

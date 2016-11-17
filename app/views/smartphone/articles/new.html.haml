@@ -1,6 +1,6 @@
 .contents.row
-  = form_for @article, url: articles_path, html: { multipart: true } do |f|
-    %h2 出品する
+  = form_for @article, url: articles_path, html: { multipart: true, class: 'article__form' } do |f|
+    %h2 イベントを企画する
     = f.label :image
     = f.file_field :image
     = f.hidden_field :image_cache

@@ -1,0 +1,65 @@
+.article__contents {
+	@extend .card__contents;
+	margin: 30px 20px;
+}
+
+.contents__title {
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    word-wrap: break-word;
+}
+
+img.advertiser-mark {
+    width: 20px;
+    float: left;
+    position: absolute;
+    left: 65px;
+}
+
+.contents__detail {
+    padding-bottom: 10px;
+}
+
+.contents__user-name {
+    text-align: center;
+    font-size: 14px;
+}
+
+.contents__more {
+	text-align: center;
+    border-top: 1px solid #CCC;
+    padding: 10px;
+
+    > a {
+    	color: $accent;
+        font-size: 15px;
+    }
+}
+
+
+img.event__image {
+    width: 100%;
+}
+
+ul.more__list {
+    position: absolute;
+    left: 20px;
+    background-color: #CCC;
+    display: block;
+    font-size: 16px;
+    list-style: none;
+    padding-left: 0;
+}
+
+// /show
+.contents__text {
+    text-align: center;
+}
+
+.suport__button {
+	@extend .contents__more;
+	color: $accent;
+    font-size: 15px;
+}

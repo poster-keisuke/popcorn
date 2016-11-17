@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree ../smartphone
+//= require ./favorite
+//= require ./hidden

@@ -1,11 +1,28 @@
+- bookmark_url = request.url
+
 .contents.row
-  .article__contents.u-mt.u-pb
-    .contents__image
-      = image_tag @article.image, class: "event__image"
-    .contents__user-name.u-mt-small
-      = "投稿者: #{@article.user.nickname}"
-    .contents__detail
-      .contents__title #{@article.title}
-      .contents__text= h(simple_format @article.text).html_safe
-    .contents__suport.u-mt
-      .suport__button 支援表明をする
+  .contents__inner
+    .article__contents.u-mt.u-pb-x-small
+      .contents__image
+        = image_tag @article.image, class: "event__image"
+      .contents__user-name.u-mt-small
+        = "投稿者: #{@article.user.nickname}"
+      .contents__detail
+        - if @article.user.advertiser?
+          = image_tag 'sale.png', class: "advertiser-mark"
+        .contents__title #{@article.title}
+        .contents__text= h(simple_format @article.text).html_safe
+      .contents__action
+        .contents__icon
+          = link_to article_favorites_toggle_path(@article) , id: 'bookmark-link', remote: true do
+            = raw favorite_icon(@article, current_user)
+        .contents__icon
+          = link_to '' , "http://twitter.com/share?url=#{bookmark_url}&text=#{@article.title} Popcorn もっと気軽にイベントを開こう！", class: "fa fa-twitter fa-2x" , target: "_blank"
+        .contents__icon
+          = link_to '' , "http://www.facebook.com/share.php?u=#{bookmark_url}", class: "fa fa-facebook-official fa-2x", onclick: "window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); ga('send', 'social', 'facebook', 'share', '#{bookmark_url}'); return false;"
+      #js-popup-open.contents__suport.u-mt
+        .suport__button 応援する
+
+= render partial: "support"
+= render partial: "timeline_favorite", :collection => @favorite, :as => "favorite"
+= render partial: "timeline_support", :collection => @supports, :as => "support"

@@ -16,11 +16,17 @@
 @import url(http://fonts.googleapis.com/css?family=Unica+One);
 
 $accent: #57C3E9;
+$accent_hover: #0090aa;
+$attention: #ffc107;
+$heart: #FFCBDD;
+
 $black: #292929;
+$lightGray: #CCC;
 $dark: #666;
 $darkGray: #999999;
-$gray: #D8D8D8;
-$lightGray: #f5f5f3;
+$gray: #ededed;
+$subGray: #D8D8D8;
+$more-lightGray: #f5f5f3;
 $white: white;
 
 
@@ -39,7 +45,7 @@ $white: white;
 
 body,html {
   height: 100%;
-  background-color: $lightGray;
+  background-color: $gray;
 }
 
 body {
@@ -133,6 +139,7 @@ header.header {
   left: 0;
   right: 0;
   z-index: 5;
+  max-height: 60px;
   div.header__bar.row {
     position: relative;
     h1.grid-6 {
