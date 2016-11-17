@@ -1,7 +1,7 @@
 %header.header
   .header__bar.row
     %h1.grid-6
-      = link_to 'indA', "/"
+      = link_to image_tag('popcorn-logo.png', class: "logo__images"), "/"
     - if user_signed_in?
       .user_nav.grid-6
         %span
