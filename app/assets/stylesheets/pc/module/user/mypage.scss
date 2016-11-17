@@ -3,6 +3,48 @@
 	text-align: center;
 }
 
+.settiongs__inner {
+	@extend .card__contents;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.user__settings {
+    display: flex;
+    min-width: 660px;
+    // @extend .card__contents;
+}
+
+.avatar__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 80px;
+}
+
+.user__edit {
+    text-align: center;
+    color: #57C3E9;
+    text-decoration: underline;
+}
+
+.settings__detail {
+    flex-grow: 1.5;
+    flex-basis: 50px;
+    margin: 0 118px;
+}
+
+.settings__image {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    margin: 20px 10px;
+}
+
+.settings__comment {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
 h3.user__article__number {
     font-weight: normal;
     text-align: center;
