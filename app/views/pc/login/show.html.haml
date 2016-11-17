@@ -1,9 +1,12 @@
+- bookmark_url = request.url
+
 :css
   body {
     padding-top: 0px;
   }
 
 = content_for :hide_header,true
+
 %link{:href => "https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister", :rel => "stylesheet"}/
 
 .login__background
@@ -27,3 +30,11 @@
       = link_to 'Sign up', new_user_registration_path, class: "button__link"
     .sign-up__non-login.center
       = link_to 'ログインなしで始める。', '/articles'
+
+
+
+  .contents__action
+    .contents__icon
+      = link_to '' , "http://twitter.com/share?url=#{bookmark_url}&text= Popcorn もっと気軽にイベントを開こう！", class: "fa fa-twitter fa-2x" , target: "_blank"
+    .contents__icon
+      = link_to '' , "http://www.facebook.com/share.php?u=#{bookmark_url}", class: "fa fa-facebook-official fa-2x", onclick: "window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); ga('send', 'social', 'facebook', 'share', '#{bookmark_url}'); return false;"

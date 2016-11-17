@@ -1,0 +1,13 @@
+.contents.row
+  %ul.timeline
+    %li
+      .timeline-badge.favorite.fa.fa-heart
+      .timeline__panel
+        .timeline-heading
+          %h4.timeline__title お気に入り
+        .timeline-body
+          %p
+            = link_to "#{favorite_user(favorite)}さん", "/#{favorite.user.nickname}", class: "timeline__user"
+          .timeline__time.u-mt-small
+            %i.fa.fa-clock-o
+              = favorite_user_time(favorite)
