@@ -1,0 +1,3 @@
+.contents.row
+  %p #{@nickname}さんの投稿一覧
+  = render partial: "articles/list", collection: @articles, :as => "article"

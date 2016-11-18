@@ -1,0 +1,44 @@
+.contents__user-name {
+    text-align: center;
+}
+.contents__more {
+    text-align: center;
+    border-top: 1px solid $lightGray;
+    padding: 20px;
+}
+
+.contents__more a {
+  text-decoration: none;
+  color: $accent;
+  margin: 0 10px;
+}
+
+.contents__more a:hover {
+  color: $accent_hover;
+}
+
+.contents__action {
+    display: flex;
+    justify-content: center;
+}
+
+.contents__icon {
+    padding-right: 20px;
+}
+
+.fa-heart {
+    color: $heart;
+}
+.fa-twitter {
+    color: #57C3E9;
+}
+
+.fa-facebook-official {
+    color: #3b5998;
+}
+
+
+.contents__suport {
+    border-top: 1px solid $lightGray;
+    padding: 20px;
+}

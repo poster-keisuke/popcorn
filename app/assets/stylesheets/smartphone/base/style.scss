@@ -16,12 +16,20 @@
 @import url(http://fonts.googleapis.com/css?family=Unica+One);
 
 $accent: #57C3E9;
+$accent_hover: #0090aa;
+$attention: #ffc107;
+$heart: #FFCBDD;
+
 $black: #292929;
+$lightGray: #CCC;
 $dark: #666;
 $darkGray: #999999;
-$gray: #D8D8D8;
-$lightGray: #f5f5f3;
+$gray: #ededed;
+$subGray: #D8D8D8;
+$more-lightGray: #f5f5f3;
 $white: white;
+
+
 
 
 //mixin
@@ -39,7 +47,7 @@ $white: white;
 
 body,html {
   height: 100%;
-  background-color: $lightGray;
+  background-color: $gray;
 }
 
 body {
@@ -121,26 +129,154 @@ div.user_image {
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
-  }
+}
 
 
 header.header {
-  @include basePadding;
   border-bottom: 1px solid $gray;
   background-color: #fff;
+  @include opacity(0.99);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 5;
+
+  /*****グローバルメニュー****/
+  #menu{
+    width: 100%;
+    margin: 10px auto;
+    background: $accent;/*７*/
+    p{
+      color: #555;
+    }
+  }
+  #menu-inner{
+    width: 1000px;/*１*/
+    height: 40px;/*２*/
+    margin: 0 auto;
+    background: #fff;/*８*/
+  }
+  #menu-btn{display: none;}
+  #menu-content{
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    list-style-type: none;
+  }
+  #menu-content > li{
+      position: relative;
+      float: left;
+      height: 100%;
+      text-align: center;
+  }
+  #menu-content > li > a{
+      position: relative;
+      display: block;
+      height: 100%;
+      padding-left: 15px;/*３*/
+      padding-right: 15px;/*３*/
+      line-height: 40px;/*２*/
+      background: #fff;/*９*/
+      color: #555;/*10*/
+      font-size: 70%;
+      text-decoration: none;
+      z-index: 2;
+  }
+  #menu-content > li > a:hover{
+      background: $accent;/*11*/
+      color: #fff;/*12*/
+  }
+  #menu-content > li > a > .blogicon-chevron-down{margin-right: 5px;}
+  /*２階層目*/
+  #menu-content > li > ul.second-content{
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      margin: 0;
+      padding-left: 0;
+      list-style-type: none;
+      z-index: -1;
+  }
+  #menu-content > li:hover > ul.second-content{
+      visibility: visible;
+      top: 40px;/*2*/
+      z-index: 1;
+      transition: all .3s;
+  }
+  #menu-content > li > ul.second-content > li{
+      text-align: center;
+      width: 100%;/*４*/
+      height: 40px;/*５*/
+  }
+  #menu-content > li > ul.second-content > li > a{
+      display: block;
+      line-height: 40px;/*５*/
+      background: $accent;/*13*/
+      color: #fff;/*14*/
+      font-size: 70%;
+      text-decoration: none;
+  }
+  #menu-content > li > ul.second-content > li > a:hover{
+      background: #fff;/*15*/
+      color: #555;/*16*/
+  }
+  /*******トグルメニュ*********/
+  @media screen and (max-width:960px){/*19*/
+    #menu-inner{
+        width: 100%;
+        height: auto;
+    }
+    #btn-content{
+      text-align: right;
+      img{
+        position: relative;
+        display: inline-block;
+        width: 100px;
+        padding: 10px 5px 5px 10px;
+        float: left;
+      }
+    }/*20*/
+    #menu-btn{
+        display: inline-block;
+        padding: 8px 15px;
+        margin-right: 8px;
+        cursor: pointer;
+        background: $accent;/*17*/
+        color: #fff;/*18*/
+        font-size: 70%;
+    }
+    #menu-content{
+        display: none;
+        width: 100%;
+    }
+    #menu-content > li{
+        width: 100%;
+        height: 40px;/*６*/
+        float: none;
+    }
+    #menu-content > li > a{
+        width: 100%;
+        line-height: 40px;/*６*/
+        padding: 0;
+        text-decoration: none;
+    }
+    /*２階層目*/
+    #menu-content > li:hover > ul.second-content{display: none;}
+    #menu-content > li > a > .blogicon-chevron-down{display: none;}
+  }
+
+
+
   div.header__bar.row {
     position: relative;
     h1.grid-6 {
-      font-size: 20px;
-      line-height: 41px;
+      font-size: 16px;
+      // line-height: 81px;
       float: left;
       a {
-        display: block;
+        display: inline-block;
       }
     }
     div.grid-6 {
@@ -149,7 +285,8 @@ header.header {
       a.post {
         @extend .btn;
         width: 120px;
-        display: inline-left;
+        display: inline-block;
+        float: left;
         margin-left: 10px;
       }
     }
@@ -196,7 +333,7 @@ header.header {
           border-bottom: 1px solid #d8d8d8;
         }
       }
-     }
+    }
   }
 }
 .form {
@@ -324,7 +461,8 @@ div.contents.row {
   form {
     @include boxBase(20px 0 ,30px);
     box-shadow: 0 0 10px rgba($black,0.2);
-    background-color: $white;
+    background: $white;
+    border-radius: 5px;
     box-sizing: border-box;
 
     h3 {
@@ -366,7 +504,7 @@ div.contents.row {
 }
 footer {
   @include boxBase;
-  color: $gray;
+  color: #c4c4c4;
   p {
     text-align: center;
   }

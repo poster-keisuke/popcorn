@@ -1,8 +1,6 @@
 .article__contents {
-    max-width: 100%;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #ccc;
+    @extend .card__contents;
+    width: 100%;
 }
 
 .event__image {
@@ -15,7 +13,7 @@
 
 .contents__detail {
 	padding: 20px;
-  position: relative;
+    position: relative;
 }
 
 .contents__title {
