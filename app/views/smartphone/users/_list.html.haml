@@ -1,0 +1,13 @@
+.user_post
+  .post__detail
+    .post__title #{article.title}
+    .post__date #{article.updated_at.strftime("%Y年%m月%d日 %H時%M分")}
+  .contents__image
+    = link_to image_tag(article.image, class: "event__image"), "/articles/#{article.id}"
+  -# .contents__detail
+  -#   - if article.user.advertiser?
+  -#     = image_tag 'sale.png', class: "advertiser-mark"
+  -#     .contents__title #{article.title}
+  -#   - else
+  -#     .contents__title #{article.title}
+  -#   .contents__user-name

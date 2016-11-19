@@ -6,6 +6,9 @@
     = javascript_include_tag "smartphone/application", "data-turbolinks-track" => true
     = csrf_meta_tags
 
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    = favicon_link_tag('favicon.ico')
+
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
 
     :javascript
@@ -34,20 +37,19 @@
           %ul#menu-content
             %li
               = link_to 'HOME', "/"
-              -# %i.blogicon-chevron-down
-              -# %ul.second-content
-              -#   %li
-              -#     %a{:href => "２階層目のリンク"} カテゴリ１-１
-              -#   %li
-              -#     %a{:href => "２階層目のリンク"} カテゴリ１-２
             %li
               - if user_signed_in?
                 = link_to '投稿する', "/articles/new", class: "post"
-                = link_to 'マイページ', "/users/#{current_user.id}"
-                = link_to "ログアウト", destroy_user_session_path, method: :delete
               - else
                 = link_to "ログイン", new_user_session_path, class: 'post'
+            %li
+              - if user_signed_in?
+                = link_to 'マイページ', "/users/#{current_user.id}"
+              - else
                 = link_to "新規登録", new_user_registration_path, class: 'post'
+            %li
+              - if user_signed_in?
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
       %div{:style => "clear:both"}
       %script{:src => "http://code.jquery.com/jquery-1.9.1.min.js", :type => "text/javascript"}
       :javascript

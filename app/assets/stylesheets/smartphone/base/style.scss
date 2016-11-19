@@ -34,7 +34,7 @@ $white: white;
 
 //mixin
 
-@mixin boxBase($margin: 30px auto, $padding: 10px) {
+@mixin boxBase($margin: 20px auto, $padding: 10px) {
   margin: $margin;
   padding: $padding;
 }
@@ -51,13 +51,13 @@ body,html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 h1,h2,h3,h4,h5,h6,body {
 line-height: 1.57;
   letter-spacing: 0.15em;
-  font-size: 16px;
+  font-size: 14px;
   color: $dark;
   font-family: "Avenir", 'Unica One', "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
   margin: 0;
@@ -141,6 +141,7 @@ header.header {
   left: 0;
   right: 0;
   z-index: 5;
+  box-shadow: 0.5px 1px 3px rgba(0,0,0,0.1);
 
   /*****グローバルメニュー****/
   #menu{

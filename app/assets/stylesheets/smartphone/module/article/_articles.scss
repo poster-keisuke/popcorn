@@ -1,6 +1,8 @@
 .article__contents {
     @extend .card__contents;
     width: 100%;
+    // border-top: solid #eee 0.5px;
+    margin-bottom: 30px;
 }
 
 .event__image {
@@ -12,21 +14,59 @@
 }
 
 .contents__detail {
-	padding: 20px;
-    position: relative;
+	padding: 10px;
+  margin: 5px 10px;
+  position: relative;
+  min-height: 110px;
 }
 
 .contents__title {
-    font-size: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
+  font-size: 15px;
+  padding: 0;
+  margin-bottom: 10px;
+  color: #555;
+  display: inline-block;
+  width : 98% ; /* IE8以下とAndroid4.3以下用フォールバック */
+  width : -webkit-calc(100% - 30px) ;
+  width : calc(100% - 30px) ;
 }
 
 .contents__text {
-    color: #777;
-    font-size: 14px;
-    line-height: 1.5;
-    text-align: center;
-    word-wrap: break-word;
+  color: #777;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+
+
+.contents__button-area{
+  float: right;
+  display: inline-block;
+  position: absolute;
+  height: 44px;
+  width: 98px;
+  right: 8px;
+  bottom: 10px;
+}
+
+.contents__button{
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ddd;
+  color: #fff;
+  display: inline-block;
+  @include box-shadow(rgba($lightGray, 0.4) 0 0 15px, rgba(0, 0, 0, 0.07) 0 0 15px inset);
+  .fa{
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    padding: 12px 14px;
+  }
+}
+.contents__button a:hover{
+  background: #555;
+  border-radius: 50%;
 }
