@@ -1,3 +1,5 @@
+- bookmark_url = request.url
+
 .contents.row
   .contents__inner
     .article__contents.u-mt.u-pb-x-small
@@ -15,9 +17,9 @@
           = link_to article_favorites_toggle_path(@article) , id: 'bookmark-link', remote: true do
             = raw favorite_icon(@article, current_user)
         .contents__icon
-          = link_to '' , "https://twitter.com/sxd_2016", class: "fa fa-twitter fa-2x"
+          = link_to '' , "http://twitter.com/share?url=#{bookmark_url}&text=#{@article.title} Popcorn もっと気軽にイベントを開こう！", class: "fa fa-twitter fa-2x" , target: "_blank"
         .contents__icon
-          = link_to '' , "https://www.facebook.com/sud.kamibayasi/?fref=ts", class: "fa fa-facebook-official fa-2x"
+          = link_to '' , "http://www.facebook.com/share.php?u=#{bookmark_url}", class: "fa fa-facebook-official fa-2x", onclick: "window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); ga('send', 'social', 'facebook', 'share', '#{bookmark_url}'); return false;"
       #js-popup-open.contents__suport.u-mt
         .suport__button 応援する
 

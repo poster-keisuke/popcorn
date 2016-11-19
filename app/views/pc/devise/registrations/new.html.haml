@@ -1,6 +1,6 @@
 .contents.row
   %h2 Sign up
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f|
     = devise_error_messages!
     .field
       = f.label :nickname
@@ -22,6 +22,14 @@
       = f.label :password_confirmation
       %br/
       = f.password_field :password_confirmation, autocomplete: "off"
+    .field
+      = f.label :avatar
+      = f.file_field :avatar
+      = f.hidden_field :avatar_cache
+    .field
+      = f.label :comment
+      %i (自己紹介やお店の紹介をしてください。(あとからでも変更できます。))
+      = f.text_area :comment, placeholder: "例)自己紹介やお店の紹介など", size: "30x20"
     .field
       = f.label :Are_you_advertiser?
       %br/
