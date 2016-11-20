@@ -88,6 +88,8 @@
       -#       = link_to "ログイン", new_user_session_path, class: 'post'
       -#       = link_to "新規登録", new_user_registration_path, class: 'post'
     = yield
-    %footer
-      %p
-        Copyright indA 2016.
+    - unless content_for?(:hide_header)
+      = render './footer'
+    -# %footer
+    -#   %p
+    -#     Copyright indA 2016.

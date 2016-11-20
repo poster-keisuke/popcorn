@@ -7,18 +7,19 @@
 	@extend .card__contents;
     margin: 0 auto;
     max-width: 700px;
+		width: 93.5%;
 }
 
 .user__settings {
     display: flex;
-    min-width: 660px;
+    width: 100%;
     // @extend .card__contents;
 }
 
 .avatar__image {
-    width: 150px;
-    height: 150px;
-    border-radius: 80px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
 .user__edit {
@@ -30,14 +31,14 @@
 .settings__detail {
     flex-grow: 1.5;
     flex-basis: 50px;
-    margin: 0 118px;
+    // margin: 0 118px;
 }
 
 .settings__image {
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 0;
-    margin: 20px 10px;
+    // margin: 20px 10px;
 }
 
 .settings__comment {
@@ -53,7 +54,6 @@ h3.user__article__number {
 .user__article {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1100px;
     margin: 0 auto;
 }
 

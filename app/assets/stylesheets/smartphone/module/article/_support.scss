@@ -10,13 +10,13 @@
   transition:800ms ease all;
   outline:none;
   text-align: center;
-  padding: 7px 0;
+  padding: 10px 0 12px 0;
   margin: 0 20px;
 }
 
 .suport__button:hover{
-  background: $white;
-  color: $accent;
+  background: $accent_hover;
+  color: $white;
 }
 
 .suport__button:before,.suport__button:after{
