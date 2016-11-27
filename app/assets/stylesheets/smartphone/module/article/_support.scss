@@ -1,0 +1,62 @@
+.suport__button{
+  background: $accent;
+  color: $white;
+  border:none;
+  position:relative;
+  height:50px;
+  font-size:1.5em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  text-align: center;
+  padding: 10px 0 12px 0;
+  margin: 0 20px;
+}
+
+.suport__button:hover{
+  background: $accent_hover;
+  color: $white;
+}
+
+.suport__button:before,.suport__button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: $accent;
+  transition:400ms ease all;
+}
+
+.suport__button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+.suport__button:hover:before,.suport__button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.support__contents {
+	@extend .card__contents;
+	width: 100%;
+}
+
+.support__close {
+    display: block!important;
+    text-align: right;
+    font-size: 25px!important;
+    cursor: pointer;
+}
+
+.support__choice {
+    display: block !important;
+    text-align: center;
+    font-size: 25px !important;
+    padding-top: 50px;
+}

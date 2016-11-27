@@ -1,10 +1,15 @@
 !!!
 %html
   %head
-    %title indA
-    = stylesheet_link_tag 'pc/application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag "pc/application", "data-turbolinks-track" => true
+    %title Popcorn
+    = stylesheet_link_tag 'smartphone/application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "smartphone/application", "data-turbolinks-track" => true
     = csrf_meta_tags
+
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    = favicon_link_tag('favicon.ico')
+
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}
 
     :javascript
       WebFontConfig = {
@@ -22,23 +27,69 @@
 
   %body
     %header.header
-      .header__bar.row
-        %h1.grid-6
-          = link_to 'indA', "/"
-        - if user_signed_in?
-          .user_nav.grid-6
-            %span
-              = "#{current_user.nickname}さん"
-              %ul.user__info
-                %li
-                  = link_to 'マイページ', "/users/#{current_user.id}"
-                  = link_to "ログアウト", destroy_user_session_path, method: :delete
-            = link_to '投稿する', "/articles/new", class: "post"
-        - else
-          .grid-6
-            = link_to "ログイン", new_user_session_path, class: 'post'
-            = link_to "新規登録", new_user_registration_path, class: 'post'
+      #menu
+        #menu-inner
+          #btn-content
+            = link_to image_tag('sp_images/popcorn-logotype.png', { :border => '0', :alt => 'popcorn'}), "/"
+            %span#menu-btn
+              %i.blogicon-reorder
+              MENU
+          %ul#menu-content
+            %li
+              = link_to 'HOME', "/"
+            %li
+              - if user_signed_in?
+                = link_to '投稿する', "/articles/new", class: "post"
+              - else
+                = link_to "ログイン", new_user_session_path, class: 'post'
+            %li
+              - if user_signed_in?
+                = link_to 'マイページ', "/users/#{current_user.id}"
+              - else
+                = link_to "新規登録", new_user_registration_path, class: 'post'
+            %li
+              - if user_signed_in?
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+      %div{:style => "clear:both"}
+      %script{:src => "http://code.jquery.com/jquery-1.9.1.min.js", :type => "text/javascript"}
+      :javascript
+        $(function(){
+            var menuBtn = $("#menu-btn"),
+                menuContent = $("#menu-content");
+            menuBtn.click(function(){
+                menuContent.slideToggle();
+            });
+            $(window).resize(function(){
+                var win = $(window).width(),
+                    p = 960;//19
+                if(win > p){
+                    menuContent.show();
+                }else{
+                    menuContent.hide();
+                }
+            });
+        });
+
+
+      -# .header__bar.row
+      -#   %h1.grid-6
+      -#     = link_to image_tag('sp_images/popcorn-logotype-3.0.png', { :border => '0', :alt => 'popcorn'}), "/", class: 'logo'
+      -#   - if user_signed_in?
+      -#     .user_nav.grid-6
+      -#       %span
+      -#         = "#{current_user.nickname}さん"
+      -#         %ul.user__info
+      -#           %li
+      -#             = link_to 'マイページ', "/users/#{current_user.id}"
+      -#             = link_to "ログアウト", destroy_user_session_path, method: :delete
+      -#       = link_to '投稿する', "/articles/new", class: "post"
+      -#   - else
+      -#     .grid-6
+      -#       = link_to "ログイン", new_user_session_path, class: 'post'
+      -#       = link_to "新規登録", new_user_registration_path, class: 'post'
     = yield
-    %footer
-      %p
-        Copyright indA 2016.
+    - unless content_for?(:hide_header)
+      = render './footer'
+    -# %footer
+    -#   %p
+    -#     Copyright indA 2016.

@@ -1,0 +1,18 @@
+.contents.row
+  .support__contents#popup-contents.hidden
+    = form_for @support, url: article_path, html: { multipart: true } do |f|
+      .support__close.fa.fa-times#js-popup__close
+      = f.label :お金で支援する
+      = f.radio_button :support_method, :money, checked: true
+
+      = f.label :スキルで支援する
+      = f.radio_button :support_method, :skill
+
+      = f.label :物資で支援する
+      = f.radio_button :support_method, :goods
+
+      = f.label :力仕事で支援する
+      = f.radio_button :support_method, :power
+
+      = f.submit 'サポートする', data: {confirm: 'Are you sure?'}
+
