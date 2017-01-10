@@ -1,0 +1,11 @@
+@mixin clear-float {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@mixin after-clear-float {
+  &::after {
+    @include clear-float;
+  }
+}

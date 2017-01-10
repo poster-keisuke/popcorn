@@ -1,0 +1,17 @@
+
+.settiongs__inner.u-mt-x-large
+  .user__settings.clearfix.u-mt-small
+    .settings__image
+      %h3.user__avatar
+        - if @user.avatar.present?
+          = image_tag "#{@user.avatar}", class: "avatar__image"
+    .settings__detail
+      %h1.user__name.u-mt #{@nickname}
+      %h1.user__edit.u-mt
+        = link_to 'プロフィールを編集', edit_user_registration_path
+      %h3.user__article__number.u-mt.u-mb-large 投稿数: #{@article.count}
+  .settings__comment.u-mt-large.u-mb-large
+    - if @user.comment.present?
+      #{@user.comment}
+.user__article
+  = render partial: "list", collection: @article, :as => "article"

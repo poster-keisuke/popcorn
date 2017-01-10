@@ -1,0 +1,16 @@
+.contents.row
+  %ul.timeline
+    %li
+      .timeline-badge.support.fa.fa-thumbs-up
+      .timeline__panel.timeline__panel--right
+        .timeline-heading
+          %h4.timeline__title サポート表明
+        .timeline-body
+          %p
+          .timeline__method
+            = support_method(support)
+          %p
+            = link_to "#{support_user(support)}さん", "/#{support.user.nickname}", class: "timeline__user"
+          .timeline__time.u-mt-small
+            %i.fa.fa-clock-o
+              = support_user_time(support)
