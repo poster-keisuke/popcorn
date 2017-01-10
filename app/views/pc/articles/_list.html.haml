@@ -11,7 +11,7 @@
       = image_tag article.image, class: "event__image"
     .contents__detail
       - if article.user.advertiser?
-        = image_tag 'sale.png', class: "advertiser-mark"
+        -# = image_tag 'sale.png', class: "advertiser-mark"
         .contents__title #{article.title}
       - else
         .contents__title #{article.title}
