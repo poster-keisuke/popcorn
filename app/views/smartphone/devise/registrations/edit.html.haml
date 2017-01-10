@@ -1,0 +1,51 @@
+.contents.row
+  %h2
+    Edit #{resource_name.to_s.humanize}
+  = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+    = devise_error_messages!
+    .field
+      = f.label :email
+      %br/
+      = f.email_field :email, autofocus: true
+    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+      %div
+        Currently waiting confirmation for: #{resource.unconfirmed_email}
+    .field
+      = f.label :password
+      %i (変更しない場合は空白にしてください。)
+      %br/
+      = f.password_field :password, autocomplete: "off"
+      - if @minimum_password_length
+        %br/
+        %em
+          = @minimum_password_length
+          characters minimum
+    .field
+      = f.label :password_confirmation
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "off"
+    .field
+      = f.label :current_password
+      %i (現在のパスワードを入力してください。)
+      %br/
+      = f.password_field :current_password, autocomplete: "off"
+    .field
+      = f.label :comment
+      %i (自己紹介やお店の紹介をしてください。)
+      = f.text_area :comment, placeholder: "例)自己紹介やお店の紹介など", size: "30x20"
+    .field
+      = f.label :avatar
+      %i (アバター画像を登録してください。)
+      = f.file_field :avatar
+      = f.hidden_field :avatar_cache
+    .field
+      = f.label :Are_you_advertiser?
+      %i (スポンサーになる場合はチェックを入れてください。)
+      %br/
+      = f.check_box :advertiser
+    .actions
+      = f.submit "Update"
+  %h3 Cancel my account
+  %p
+    Unhappy? #{button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
+  = link_to "Back", :back

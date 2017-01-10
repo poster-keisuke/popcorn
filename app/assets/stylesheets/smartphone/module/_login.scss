@@ -1,0 +1,75 @@
+.login{
+
+	&__button {
+		width: 300px;
+		text-align: center;
+		display: block;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		background-color: $accent;
+ 		margin-bottom: 80px;
+	}
+
+    &__non-login{
+	    text-align: center;
+	}
+	&__title {
+		font-family: 'Love Ya Like A Sister', cursive;
+		position: absolute;
+		top: 0px;
+		font-size: 250px;
+        color: $white;
+	}
+	&__subtitle {
+		position: absolute;
+		top: 400px;
+		font-size: 30px;
+        color: $white;
+    }
+
+}
+
+.background__image {
+	width: 100%;
+	height: 560px;
+	position: relative;
+}
+
+.detail__title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.button__link {
+    color: $white;
+    line-height: 1.8;
+    font-size: 20px;
+
+    &--small {
+    	color: $white;
+    	font-size: 15px;
+    }
+}
+
+.sign-up{
+
+	&__title {
+		font-size: 13px;
+	}
+
+	&__button{
+		width: 300px;
+		text-align: center;
+		display: block;
+ 		margin-left: auto;
+ 		margin-right: auto;
+ 		background-color: $accent;
+	}
+
+	&__non-login{
+		font-size: 12px;
+		margin: 30px;
+		text-decoration: underline;
+		}
+}
