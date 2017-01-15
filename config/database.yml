@@ -53,6 +53,6 @@ test:
 production:
   <<: *default
   database: popcorn_production
-  username: popcorn
+  username: <%= ENV['MYSQL_ROOT_USERNAME'] %>
   password: <%= ENV['POPCORN_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
