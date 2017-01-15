@@ -26,6 +26,13 @@ set :rbenv_ruby, '2.3.0'
 #出力するログのレベル。
 set :log_level, :debug
 
+# Default value for default_env is {}
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  DEVISE_SECRET_KEY: ENV["DEVISE_SECRET_KEY"]
+}
+
 namespace :deploy do
   desc 'Restart application'
   task :restart do
