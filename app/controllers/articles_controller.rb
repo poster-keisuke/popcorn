@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-	before_action :move_to_index, except: :index
+	# before_action :move_to_login, except: :index
 
 	def index
 		@articles = Article.all.page(params[:page]).per(5).order("created_at DESC")
@@ -11,6 +11,7 @@ class ArticlesController < ApplicationController
 	end
 
 	def show
+		move_to_login
 		@article = Article.find_by(id: params[:id])
 		@favorite = @article.favorites
 
@@ -52,9 +53,9 @@ class ArticlesController < ApplicationController
 		params.require(:article).permit(:image, :title, :text)
 	end
 
-	def move_to_index
+	def move_to_login
 		unless user_signed_in?
-		  redirect_to action: :index
+		  redirect_to "/login"
 		end
 	end
 
