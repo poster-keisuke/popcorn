@@ -3,7 +3,7 @@ lock "3.7.1"
 
 set :application, "popcorn"
 set :repo_url, "git@github.com:poster-keisuke/popcorn.git"
-ser :branch, 'master'
+set :branch, 'master'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
