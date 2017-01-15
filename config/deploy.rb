@@ -34,6 +34,7 @@ set :default_env, {
 }
 
 namespace :deploy do
+
   desc 'Restart application'
   task :restart do
     on roles(:app) do
