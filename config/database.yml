@@ -55,3 +55,4 @@ production:
   database: popcorn_production
   username: popcorn
   password: <%= ENV['POPCORN_DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

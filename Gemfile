@@ -120,6 +120,11 @@ group :development do
   gem 'rubocop', require: false   # Rails校正ツール
   gem 'scss_lint', require: false # Scss校正ツール https://github.com/brigade/scss-lint
 
+  gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+
 end
 
 gem 'sprockets', '2.11.0'
